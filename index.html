@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Universo PRO — Simulador</title>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+  <header class="topbar">
+    <h1>🌌 Universo PRO — Simulador Completo</h1>
+    <div class="meta">Físico · Interativo · Educacional · Comentários “IA”</div>
+  </header>
+
+  <main class="layout">
+    <section class="stage">
+      <canvas id="universe"></canvas>
+      <div class="overlay-stats" id="stats"></div>
+    </section>
+
+    <aside class="sidebar">
+      <div class="panel">
+        <h2>Controles</h2>
+        <div class="control">
+          <label>Preset</label>
+          <select id="preset">
+            <option value="solar">Sistema Solar (compacto)</option>
+            <option value="binary">Estrela Binária + 3 planetas</option>
+            <option value="disc">Disco Galáctico simplificado</option>
+            <option value="vazio">Vazio (começar do zero)</option>
+          </select>
+        </div>
+
+        <div class="grid2">
+          <button id="applyPreset">Aplicar</button>
+          <button id="clearAll">Limpar</button>
+        </div>
+
+        <hr/>
+
+        <div class="control">
+          <label>Tempo (x)</label>
+          <input type="range" min="0.01" max="5" step="0.01" id="timeScale" value="1"/>
+          <span id="timeScaleVal">1.00x</span>
+        </div>
+
+        <div class="grid3">
+          <button id="playPause">⏯︎ Pausar</button>
+          <button id="step">⏭︎ 1 passo</button>
+          <button id="resetCamera">🎯 Reset câmera</button>
+        </div>
+
+        <div class="control">
+          <label><input type="checkbox" id="toggleTrails" checked/> Trilhas</label>
+          <label><input type="checkbox" id="toggleLabels" checked/> Rótulos</label>
+          <label><input type="checkbox" id="mergeCollisions" checked/> Fundir colisões</label>
+        </div>
+
+        <hr/>
+
+        <h3>Novo Corpo</h3>
+        <div class="control">
+          <label>Nome</label>
+          <input type="text" id="newName" placeholder="Planeta-X"/>
+        </div>
+        <div class="control">
+          <label>Massa (kg)</label>
+          <input type="number" id="newMass" value="5.97e24" step="1e22"/>
+        </div>
+        <div class="grid2">
+          <div class="control">
+            <label>Raio (m)</label>
+            <input type="number" id="newRadius" value="6.37e6" step="1e5"/>
+          </div>
+          <div class="control">
+            <label>Densidade (kg/m³)</label>
+            <input type="number" id="newDensity" value="5510" step="10"/>
+          </div>
+        </div>
+        <div class="grid2">
+          <div class="control">
+            <label>Posição X (m)</label>
+            <input type="number" id="newX" value="0" step="1e7"/>
+          </div>
+          <div class="control">
+            <label>Posição Y (m)</label>
+            <input type="number" id="newY" value="1.5e11" step="1e7"/>
+          </div>
+        </div>
+        <div class="grid2">
+          <div class="control">
+            <label>Velocidade VX (m/s)</label>
+            <input type="number" id="newVx" value="-30000" step="1000"/>
+          </div>
+          <div class="control">
+            <label>Velocidade VY (m/s)</label>
+            <input type="number" id="newVy" value="0" step="1000"/>
+          </div>
+        </div>
+        <button id="addBody">Adicionar Corpo</button>
+
+        <hr/>
+
+        <h3>Exportar / Importar</h3>
+        <div class="grid2">
+          <button id="exportJSON">Exportar JSON</button>
+          <input type="file" id="importJSON" accept="application/json"/>
+        </div>
+      </div>
+
+      <div class="panel">
+        <h2>Comentários (IA local)</h2>
+        <div id="commentary" class="commentary"></div>
+      </div>
+
+      <div class="panel">
+        <h2>Ajuda</h2>
+        <ul class="help">
+          <li>Arraste com o mouse para mover a câmera.</li>
+          <li>Roda do mouse: zoom.</li>
+          <li>Clique duplo em um corpo para focar.</li>
+        </ul>
+      </div>
+    </aside>
+  </main>
+
+  <footer class="footer">
+    Feito com ♥ por Thiago — arquitetura pronta para 3D real (quando quiser, plugamos Three.js local).
+  </footer>
+
+  <script type="module" src="src/main.js"></script>
+</body>
+</html>

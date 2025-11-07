@@ -1,0 +1,7 @@
+[
+  {"name":"Sol","mass":1.989e30,"radius":6.9634e8,"x":0,"y":0,"vx":0,"vy":0,"color":"#ffd166"},
+  {"name":"Mercúrio","mass":3.285e23,"radius":2.44e6,"x":5.79e10,"y":0,"vx":0,"vy":47360,"color":"#cbd5e1"},
+  {"name":"Vênus","mass":4.867e24,"radius":6.051e6,"x":1.082e11,"y":0,"vx":0,"vy":35020,"color":"#eab308"},
+  {"name":"Terra","mass":5.972e24,"radius":6.371e6,"x":1.496e11,"y":0,"vx":0,"vy":29780,"color":"#8ab4f8"},
+  {"name":"Marte","mass":6.39e23,"radius":3.389e6,"x":2.279e11,"y":0,"vx":0,"vy":24070,"color":"#fca5a5"}
+]
